@@ -16,6 +16,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     </script>
+
     <style media="screen">
       #username{
         font-family: Pacifico;
@@ -51,6 +52,9 @@
                   <li><a href="aboutme.html">About Me</a></li>
                   <li><a href="contactme.html">Contact Me</a></li>
                 </ul>
+                <ul class="navbar navbar-nav navbar-right" style="color:white">
+                  <li id="date">this</li>
+                </ul>
               </div>
             </div>
           </nav>
@@ -59,11 +63,31 @@
               <img class="img img-responsive" src="http://static5.businessinsider.com/image/55423f116bb3f77f3d009ef3/9-books-mark-zuckerberg-thinks-everyone-should-read.jpg" alt="">
             </div>
             <div class="col-md-6">
-                
+
             </div>
           </div>
 
 
       </div>
+      <script type="text/javascript">
+
+        function displayName(){
+          // alert("sdf");
+          // document.write("<h1>this ten in this is document written in javascript</h1>");
+        }
+        function getDate(){
+          document.getElementById("date").innerHTML=Date();
+        }
+
+        getDate();
+
+        // document.getElementsByClassName('row').innerHTML=Date();
+        // setTimeout(function(){getDate()},1000);
+        setInterval(function(){
+          getDate();
+          // document.getElementById("date").innerHTML=Date();
+        },1000);
+        // getDate();
+      </script>
   </body>
 </html>
