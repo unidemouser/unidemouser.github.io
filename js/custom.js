@@ -18,6 +18,27 @@
 
         function buttonClicked(){
           console.log("clicked");
+          $.ajax({
+            url:'https://raw.githubusercontent.com/sandipbgt/nepal-data/master/json/districts.json',
+            method:'GET',
+            success:function(data){
+              // $("#content").html(data);
+              data=$.parseJSON(data);
+              console.log(data);
+                // document.write("hello")
+                var name="sdgsdg";
+                var names=["rahul","sdgsdg"];
+                var c="<ul>";
+              for(var i=0;i<data.length;i++){
+                c=c+"<li>"+data[i]+"</li>"
+              }
+              c=c+"</ul>";
+              $("#content").html(c);
+            },
+            error:function(data){
+              alert("no iternet connection");
+            }
+          });
         }
 
         function printTable(num){
@@ -45,3 +66,92 @@
         var name="Ram Sharma";
         console.log(name+" has scored "+name.length);
         // var userInput=
+
+        var districts=[
+    "achham",
+    "arghakhanchi",
+    "baglung",
+    "baitadi",
+    "bajhang",
+    "bajura",
+    "banke",
+    "bara",
+    "bardiya",
+    "bhaktapur",
+    "bhojpur",
+    "chitwan",
+    "dadeldhura",
+    "dailekh",
+    "dang deukhuri",
+    "darchula",
+    "dhading",
+    "dhankuta",
+    "dhanusa",
+    "dholkha",
+    "dolpa",
+    "doti",
+    "gorkha",
+    "gulmi",
+    "humla",
+    "ilam",
+    "jajarkot",
+    "jhapa",
+    "jumla",
+    "kailali",
+    "kalikot",
+    "kanchanpur",
+    "kapilvastu",
+    "kaski",
+    "kathmandu",
+    "kavrepalanchok",
+    "khotang",
+    "lalitpur",
+    "lamjung",
+    "mahottari",
+    "makwanpur",
+    "manang",
+    "morang",
+    "mugu",
+    "mustang",
+    "myagdi",
+    "nawalparasi",
+    "nuwakot",
+    "okhaldhunga",
+    "palpa",
+    "panchthar",
+    "parbat",
+    "parsa",
+    "pyuthan",
+    "ramechhap",
+    "rasuwa",
+    "rautahat",
+    "rolpa",
+    "rukum",
+    "rupandehi",
+    "salyan",
+    "sankhuwasabha",
+    "saptari",
+    "sarlahi",
+    "sindhuli",
+    "sindhupalchok",
+    "siraha",
+    "solukhumbu",
+    "sunsari",
+    "surkhet",
+    "syangja",
+    "tanahu",
+    "taplejung",
+    "terhathum",
+    "udayapur"
+];
+var content="";
+document.write("<ul>");
+for(var a=0;a<districts.length;a++){
+
+  document.write("<li>"+districts[a].toUpperCase()+"</li>");
+
+}
+document.write("</ul>");
+var fah=112;
+var cel=Math.ceil((fah-32)*5/9);
+document.write(fah+" f is equivalent to "+cel+"celcus");
